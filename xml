@@ -1,0 +1,9 @@
+<!-- Views/DashboardWindow.xaml -->  
+<Window x:Class="SolarPanelApp.Views.DashboardWindow"  
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"  
+        Title="Solar Panel Monitor" Height="450" Width="800">  
+    <Grid>  
+        <TextBlock Text="{Binding LightIntensity}" FontSize="20"/>  
+        <Button Content="Rotate Panels" Command="{Binding RotateCommand}"/>  
+    </Grid>  
+</Window>  
