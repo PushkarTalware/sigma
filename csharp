@@ -1,0 +1,24 @@
+// Services/SerialCommunication.cs  
+using System.IO.Ports;  
+
+public class SerialCommunication  
+{  
+    private SerialPort _serialPort;  
+
+    public SerialCommunication(string portName, int baudRate)  
+    {  
+        _serialPort = new SerialPort(portName, baudRate);  
+        _serialPort.Open();  
+    }  
+
+    public SensorData ReadSensorData()  
+    {  
+        string data = _serialPort.ReadLine();  
+        return ParseSensorData(data); // Converts to SensorData object  
+    }  
+
+    public void SendCommand(string command)  
+    {  
+        _serialPort.WriteLine(command);  
+    }  
+}  
